@@ -1,5 +1,7 @@
 package com.udacity.sandwichclub.utils;
 
+import android.util.Log;
+
 import com.udacity.sandwichclub.model.Sandwich;
 
 import org.json.JSONArray;
@@ -43,6 +45,7 @@ public class JsonUtils {
                                     image,
                                     ingredients);
         } catch (JSONException e) {
+            Log.e("JsonUtils", e.getMessage());
             e.printStackTrace();
             return null;
         }
@@ -62,6 +65,7 @@ public class JsonUtils {
                 try {
                     detailsList.add(jArray.getString(i));
                 } catch (JSONException e) {
+                    Log.e("JsonUtils", e.getMessage());
                     e.printStackTrace();
                     return null;
                 }
