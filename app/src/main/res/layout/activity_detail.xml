@@ -35,7 +35,8 @@
                 android:id="@+id/origin_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp" />
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp" />
 
         </LinearLayout>
 
@@ -55,7 +56,8 @@
                 android:id="@+id/also_known_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp" />
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp" />
 
         </LinearLayout>
 
@@ -75,7 +77,8 @@
                 android:id="@+id/ingredients_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp" />
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp" />
 
         </LinearLayout>
 
@@ -95,7 +98,8 @@
                 android:id="@+id/description_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp" />
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp" />
 
         </LinearLayout>
 

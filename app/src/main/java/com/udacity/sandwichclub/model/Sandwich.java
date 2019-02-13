@@ -76,7 +76,7 @@ public class Sandwich {
 
     /**
      * Returns a comma delimited String for the ingredients List.
-     * @return
+     * @return A String representation of the ingredients separated by commas.
      */
     public String getIngredientsString() {
         return convertListToString(ingredients);
@@ -84,7 +84,7 @@ public class Sandwich {
 
     /**
      * Returns a comma delimited String for the alsoKnownAs List.
-     * @return
+     * @return A String representation of the also known as list separated by commas.
      */
     public String getAlsoKnownAsString() {
         return convertListToString(alsoKnownAs);
@@ -92,8 +92,8 @@ public class Sandwich {
 
     /**
      * Converts the given list of Strings into a comma delimited String.
-     * @param list
-     * @return
+     * @param list to convert to String. Will be either the  the ingredients or alsoKnownAs.
+     * @return A comma delimited String.
      */
     private String convertListToString(List<String> list) {
         StringBuilder sb = new StringBuilder();

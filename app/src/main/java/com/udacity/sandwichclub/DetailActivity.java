@@ -59,7 +59,7 @@ public class DetailActivity extends AppCompatActivity {
 
     /**
      * Populates the views in the activity with the details from the user selected sandwich.
-     * @param sandwich
+     * @param sandwich with the details to update the UI components with.
      */
     private void populateUI(Sandwich sandwich) {
         TextView mOriginTextView = findViewById(R.id.origin_tv);

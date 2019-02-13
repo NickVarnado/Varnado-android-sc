@@ -20,8 +20,8 @@ public class JsonUtils {
 
     /**
      * Parses the JSON String and returns a Sandwich object.
-     * @param json
-     * @return
+     * @param json to parse.
+     * @return The Sandwich object.
      */
     public static Sandwich parseSandwichJson(String json) {
         Sandwich sandwich;
@@ -52,8 +52,8 @@ public class JsonUtils {
     /**
      * Creates an ArrayList of Strings from the given JSONArray. Used for the alsoKnownAs array and
      * the ingredients array.
-     * @param jArray
-     * @return
+     * @param jArray to get the details for.
+     * @return An ArrayList of Strings that represent the ingredients and also known as details.
      */
     private static ArrayList<String> getSandwichDetailsList(JSONArray jArray) {
         ArrayList<String> detailsList = new ArrayList<>();
