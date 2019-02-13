@@ -73,4 +73,38 @@ public class Sandwich {
     public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
     }
+
+    /**
+     * Returns a comma delimited String for the ingredients List.
+     * @return
+     */
+    public String getIngredientsString() {
+        return convertListToString(ingredients);
+    }
+
+    /**
+     * Returns a comma delimited String for the alsoKnownAs List.
+     * @return
+     */
+    public String getAlsoKnownAsString() {
+        return convertListToString(alsoKnownAs);
+    }
+
+    /**
+     * Converts the given list of Strings into a comma delimited String.
+     * @param list
+     * @return
+     */
+    private String convertListToString(List<String> list) {
+        StringBuilder sb = new StringBuilder();
+        String separator = ", ";
+        for (int i = 0 ; i < list.size(); i++) {
+            if (i != list.size() - 1) {
+                sb.append(list.get(i)).append(separator);
+            } else {
+                sb.append(list.get(i)).append(".");
+            }
+        }
+        return sb.toString();
+    }
 }

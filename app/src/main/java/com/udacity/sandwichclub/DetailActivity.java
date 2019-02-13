@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -43,7 +44,7 @@ public class DetailActivity extends AppCompatActivity {
             return;
         }
 
-        populateUI();
+        populateUI(sandwich);
         Picasso.with(this)
                 .load(sandwich.getImage())
                 .into(ingredientsIv);
@@ -56,7 +57,38 @@ public class DetailActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
     }
 
-    private void populateUI() {
+    /**
+     * Populates the views in the activity with the details from the user selected sandwich.
+     * @param sandwich
+     */
+    private void populateUI(Sandwich sandwich) {
+        TextView mOriginTextView = findViewById(R.id.origin_tv);
+        TextView mDescriptionTextView = findViewById(R.id.description_tv);
+        TextView mIngredientsTextView = findViewById(R.id.ingredients_tv);
+        TextView mAlsoKnownAsTextView = findViewById(R.id.also_known_tv);
 
+        // Check for empty strings and replace them with something more descriptive. This provides
+        // a more uniform looking UI without empty fields.
+        String placeOfOrigin = sandwich.getPlaceOfOrigin();
+        if (placeOfOrigin.equals("")) {
+            placeOfOrigin = getString(R.string.unknown);
+        }
+        String description = sandwich.getDescription();
+        if (description.equals("")) {
+            description = getString(R.string.no_description_available);
+        }
+        String ingredients = sandwich.getIngredientsString();
+        if (ingredients.equals("")) {
+            ingredients = getString(R.string.no_ingedients_available);
+        }
+        String alsoKnownAs = sandwich.getAlsoKnownAsString();
+        if (alsoKnownAs.equals("")) {
+            alsoKnownAs = getString(R.string.not_applicable);
+        }
+
+        mOriginTextView.setText(placeOfOrigin);
+        mDescriptionTextView.setText(description);
+        mIngredientsTextView.setText(ingredients);
+        mAlsoKnownAsTextView.setText(alsoKnownAs);
     }
 }

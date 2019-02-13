@@ -13,6 +13,12 @@
     <!-- Error messages-->
     <string name="detail_error_message">Sandwich data not available</string>
 
+    <!-- Unknown data messages -->
+    <string name="unknown">Unknown</string>
+    <string name="no_description_available">No description available</string>
+    <string name="no_ingedients_available">No ingredients available</string>
+    <string name="not_applicable">N/A</string>
+
     <string-array name="sandwich_names">
         <item>Ham and cheese sandwich</item>
         <item>Bosna</item>
