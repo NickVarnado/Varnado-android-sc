@@ -12,6 +12,8 @@ import java.util.ArrayList;
 
 public class JsonUtils {
 
+    public static final String TAG = JsonUtils.class.getSimpleName();
+
     private static final String NAME = "name";
     private static final String MAIN_NAME = "mainName";
     private static final String ALSO_KNOWN_AS = "alsoKnownAs";
@@ -19,6 +21,9 @@ public class JsonUtils {
     private static final String DESCRIPTION = "description";
     private static final String IMAGE = "image";
     private static final String INGREDIENTS = "ingredients";
+
+    // Image fallback string
+    private static final String NO_IMAGE_FOUND = "no image found";
 
     /**
      * Parses the JSON String and returns a Sandwich object.
@@ -35,7 +40,7 @@ public class JsonUtils {
             ArrayList<String> alsoKnownAs = getSandwichDetailsList(alsoKnownAsArray);
             String placeOfOrigin = sandwichData.getString(PLACE_OF_ORIGIN);
             String description = sandwichData.getString(DESCRIPTION);
-            String image = sandwichData.getString(IMAGE);
+            String image = sandwichData.optString(IMAGE, NO_IMAGE_FOUND);
             JSONArray ingredientsArray = sandwichData.getJSONArray(INGREDIENTS);
             ArrayList<String> ingredients = getSandwichDetailsList(ingredientsArray);
             sandwich = new Sandwich(mainName,
@@ -45,7 +50,7 @@ public class JsonUtils {
                                     image,
                                     ingredients);
         } catch (JSONException e) {
-            Log.e("JsonUtils", e.getMessage());
+            Log.e(TAG, e.getMessage());
             e.printStackTrace();
             return null;
         }
@@ -65,7 +70,7 @@ public class JsonUtils {
                 try {
                     detailsList.add(jArray.getString(i));
                 } catch (JSONException e) {
-                    Log.e("JsonUtils", e.getMessage());
+                    Log.e(TAG, e.getMessage());
                     e.printStackTrace();
                     return null;
                 }

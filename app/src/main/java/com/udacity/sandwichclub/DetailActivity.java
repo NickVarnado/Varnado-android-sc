@@ -44,9 +44,12 @@ public class DetailActivity extends AppCompatActivity {
             return;
         }
 
+        // TODO: Learn how to use drawables and create the placeholder and error images.
         populateUI(sandwich);
         Picasso.with(this)
                 .load(sandwich.getImage())
+                .placeholder(R.drawable.user_placeholder)
+                .error(R.drawable.user_placeholder_error)
                 .into(ingredientsIv);
 
         setTitle(sandwich.getMainName());
@@ -79,7 +82,7 @@ public class DetailActivity extends AppCompatActivity {
         }
         String ingredients = sandwich.getIngredientsString();
         if (ingredients.equals("")) {
-            ingredients = getString(R.string.no_ingedients_available);
+            ingredients = getString(R.string.no_ingredients_available);
         }
         String alsoKnownAs = sandwich.getAlsoKnownAsString();
         if (alsoKnownAs.equals("")) {

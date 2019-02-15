@@ -16,7 +16,7 @@
     <!-- Unknown data messages -->
     <string name="unknown">Unknown</string>
     <string name="no_description_available">No description available</string>
-    <string name="no_ingedients_available">No ingredients available</string>
+    <string name="no_ingredients_available">No ingredients available</string>
     <string name="not_applicable">N/A</string>
 
     <string-array name="sandwich_names">
